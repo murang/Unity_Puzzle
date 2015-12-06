@@ -279,6 +279,14 @@ public class PuzzleControl : MonoBehaviour {
 			Debug.DrawLine(square[i], square[(i + 1)%4], Color.white, 0.0f, false);
 		}
 	}
+
+	public bool isCleared(){
+		return this.step_now == STEP.CLEAR;
+	}
+
+	public bool isFinishShow(){
+		return this.is_clear_show;
+	}
 }
 
 

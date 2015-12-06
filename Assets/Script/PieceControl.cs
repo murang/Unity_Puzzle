@@ -42,10 +42,13 @@ public class PieceControl : MonoBehaviour {
     public float height_offset = 0.0f;
     public float _roll = 0.0f;
 
+	void Awake(){
+		this.pos_begin = this.transform.position;
+		this.pos_finish = this.pos_begin;
+	}
+
 	// Use this for initialization
 	void Start () {
-        this.pos_begin = this.transform.position;
-        this.pos_finish = this.pos_begin;
         this.obj_camera = GameObject.FindGameObjectWithTag("MainCamera");
         this.script_game_control = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
 	}
@@ -148,6 +151,7 @@ public class PieceControl : MonoBehaviour {
                 }
                 break;
         }
+		this.GetComponent<Renderer> ().material.color = _color;
 	}
 
     public Bounds getBounds(Vector3 center)

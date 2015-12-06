@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 28949c028ecd84745a8d403a7967e582
-timeCreated: 1447386688
+timeCreated: 1449412019
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefab_puzzle: {fileID: 100002, guid: 482cca0733304c649aa7ab49c751a729, type: 3}
+  - script_puzzle_control: {instanceID: 0}
+  - texture_finish: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

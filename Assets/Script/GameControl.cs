@@ -45,17 +45,25 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         this.script_puzzle_control = (Instantiate(this.prefab_puzzle) as GameObject).GetComponent<PuzzleControl>();
-        //this.sprite_finish = Sprite.Create(this.texture_finish, new Rect(0, 0, 256, 256), new Vector2(0.5f, 0.5f));
+//        this.sprite_finish = Sprite.Create(this.texture_finish, new Rect(0, 0, 256, 256), new Vector2(0.5f, 0.5f));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    
+		this.step_timer += Time.deltaTime;
+		switch (this.current_step) {
+		case STEP.PLAYING:
+			if(this.script_puzzle_control.isCleared()){
+				this.next_step = STEP.CLEAR;
+			}
+			break;
+
+		}
 	}
 
     void OnGUI()
     {
-        GUI.DrawTexture(new Rect(200, 100,300,300), this.texture_finish, ScaleMode.ScaleToFit, false, .0f);
+//        GUI.DrawTexture(new Rect(200, 100,300,300), this.texture_finish, ScaleMode.ScaleToFit, false, .0f);
     }
 
     public void playSE(SE se)
